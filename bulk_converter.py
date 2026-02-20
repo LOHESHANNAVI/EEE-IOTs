@@ -1,16 +1,16 @@
-#  bulk converter
+# Buck Converter Monitor
 
 import streamlit as st
 import matplotlib.pyplot as plt
 
 st.title("Buck Converter Monitor")
 
-voltage = str(input('GIVE ME THE VOLTAGE'))
-current = str(input('GIVE ME THE CURRENT'))
+# Use Streamlit input fields
+voltage = st.number_input("Enter Voltage (V)", min_value=0.0)
+current = st.number_input("Enter Current (A)", min_value=0.0)
 
 power = voltage * current
 
-st.metric("Output Voltage", voltage)
-st.metric("Output Current", current)
-
-st.metric("Output Power", power)
+st.metric("Output Voltage (V)", voltage)
+st.metric("Output Current (A)", current)
+st.metric("Output Power (W)", power)
